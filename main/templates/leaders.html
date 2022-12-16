@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html>
+      <body>
+        {% block content %}
+            <div class="row">
+                <h3>Hitting Leaders</h3>
+                <div class="col">
+                    <h4>Home Run Leaders</h4>
+                    <table class="table table-striped table-hover blue-jays-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Team</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for i in hitting_leaders.leagueLeaders.0.leaders %}
+                            <tr class="table-light" scope="row">
+                                <td>{{ i.rank }}</td>
+                                <td><a href="{% url 'player' i.person.id %}">{{ i.person.fullName }}</a></td>
+                                <td><a href="{% url 'roster' i.team.id %}">{{ i.team.name }}</a></td>
+                                <td>{{ i.value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h4>RBI Leaders</h4>
+                    <table class="table table-striped table-hover blue-jays-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Team</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for i in hitting_leaders.leagueLeaders.3.leaders %}
+                            <tr class="table-light" scope="row">
+                                <td>{{ i.rank }}</td>
+                                <td><a href="{% url 'player' i.person.id %}">{{ i.person.fullName }}</a></td>
+                                <td><a href="{% url 'roster' i.team.id %}">{{ i.team.name }}</a></td>
+                                <td>{{ i.value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Pitching Leaders</h3>
+                <div class="col">
+                    <h4>ERA Leaders</h4>
+                    <table class="table table-striped table-hover blue-jays-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Team</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for i in pitching_leaders.leagueLeaders.0.leaders %}
+                            <tr class="table-light" scope="row">
+                                <td>{{ i.rank }}</td>
+                                <td><a href="{% url 'player' i.person.id %}">{{ i.person.fullName }}</a></td>
+                                <td><a href="{% url 'roster' i.team.id %}">{{ i.team.name }}</a></td>
+                                <td>{{ i.value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <h4>Strike Out Leaders</h4>
+                    <table class="table table-striped table-hover blue-jays-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Team</th>
+                                <th scope="col">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for i in pitching_leaders.leagueLeaders.3.leaders %}
+                            <tr class="table-light" scope="row">
+                                <td>{{ i.rank }}</td>
+                                <td><a href="{% url 'player' i.person.id %}">{{ i.person.fullName }}</a></td>
+                                <td><a href="{% url 'roster' i.team.id %}">{{ i.team.name }}</a></td>
+                                <td>{{ i.value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        {% endblock %}
+      </body>
+</html>

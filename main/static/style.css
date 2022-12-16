@@ -1,0 +1,50 @@
+#pitchers {
+    display: none;
+}
+
+body {
+    background-color: #244D87;
+}
+
+.blue-jays-table tr {
+    background-color: #3E9FCA;
+}
+
+.blue-jays-table th {
+    color: white;
+}
+
+.blue-jays-table a {
+    text-decoration: none;
+    color: #244D87;
+    font-weight: bold;
+}
+
+h4,
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.player-stat-table {
+    float: left;
+    width: 300px;
+    border-collapse: collapse
+}
+
+.player-stat-table td {
+    text-align: center;
+    color: white;
+}
+
+.player-stat-table th {
+    text-align: center;
+    color: #3E9FCA;
+}
+
+.nav-link {
+    color: white;
+}
