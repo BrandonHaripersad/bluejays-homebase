@@ -9,9 +9,9 @@
         {% endfor %}
       </div> -->
       
-      <div class="row row-cols-sm-12 row-cols-md-12 row-cols-lg-6">
+      <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2">
         {% for i in teamRecords %}
-        <div class="col col-lg-6">
+        <div class="col">
           <table class="table table-striped table-hover blue-jays-table">
             <thead>
               <tr>
@@ -52,6 +52,40 @@
           </table>
         </div>
         {% endfor %}
+      </div>
+      <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><a href={{ feed.0.links.0.href }}>{{ feed.0.title }}</a></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ feed.0.author }} | {{ feed.0.published }}</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><a href={{ feed.1.links.0.href }}>{{ feed.1.title }}</a></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ feed.1.author }} | {{ feed.1.published }}</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><a href={{ feed.2.links.0.href }}>{{ feed.2.title }}</a></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ feed.2.author }} | {{ feed.2.published }}</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><a href={{ feed.3.links.0.href }}>{{ feed.3.title }}</a></h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ feed.3.author }} | {{ feed.3.published }}</h6>
+            </div>
+          </div>
+        </div>
       </div>
       {% endblock %}
   </body>

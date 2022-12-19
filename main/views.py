@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import requests
 import json
+import feedparser
 
 BASE_URL = "https://statsapi.mlb.com"
 
@@ -12,7 +13,17 @@ def standings(request):
 
     teamRecords = response.json()
 
-    return render(request, "home.html", {'teamRecords':teamRecords["records"]})
+    order = [201, 204, 202, 205, 200, 203]
+    divisons_ordered = []
+
+    for id in order:
+        for div in teamRecords['records']:
+            if id == div['division']['id']:
+                divisons_ordered.append(div)
+
+    feed = feedparser.parse("https://www.mlb.com/feeds/news/rss.xml")
+
+    return render(request, "home.html", {'teamRecords':divisons_ordered, 'feed':feed['entries']})
     pass
 
 def roster(request, id):
